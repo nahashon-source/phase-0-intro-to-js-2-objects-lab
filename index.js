@@ -1,4 +1,3 @@
-// Write your solution in this file!
 const employee = {
     name: "Max",
     streetAddress: "5 Main Street",
@@ -15,7 +14,13 @@ const employee = {
   
     return employee;
   }
-  
   function deleteFromEmployeeByKey(employee, key) {
-    // Alternate using ES6 Spread operator
-  }  
+    const newEmployee = { ...employee };
+    delete newEmployee[key];
+    return newEmployee;
+}
+
+function destructivelyDeleteFromEmployeeByKey(employee, key) {
+    delete employee[key];
+    return employee;
+}
